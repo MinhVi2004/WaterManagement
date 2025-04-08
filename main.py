@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QApplication
-from GUI.ChonKhachHang import ChonKhachHang
+from GUI.Login import Login_w
 
 app = QApplication([])
-window = ChonKhachHang()
+window = Login_w()
 window.show()
 app.exec()
