@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem, QAbstractItemView, QH
 from PyQt6.QtCore import Qt
 #? Load giao diện sử dụng uic
 from PyQt6 import uic
-from BUS.CustomerBUS import CustomerBUS
+from BUS.KhachHangBUS import KhachHangBUS
 from GUI.TinhTienNuoc import TinhTienNuoc
 
 class ChonKhachHang(QMainWindow):
@@ -10,7 +10,7 @@ class ChonKhachHang(QMainWindow):
         super().__init__()
         uic.loadUi("GUI/UI/chonKhachHangUI.ui", self)
 
-        self.customerBUS = CustomerBUS()
+        self.customerBUS = KhachHangBUS()
         self.loadData()
         self.btnSubmit.clicked.connect(self.xacNhanKhachHang)
         self.btnClose.clicked.connect(self.close)
