@@ -509,7 +509,7 @@
      <x>0</x>
      <y>0</y>
      <width>1136</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -546,6 +546,54 @@
     <hint type="destinationlabel">
      <x>305</x>
      <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tenKH</sender>
+   <signal>returnPressed()</signal>
+   <receiver>email</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>email</sender>
+   <signal>returnPressed()</signal>
+   <receiver>phone</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>337</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>phone</sender>
+   <signal>returnPressed()</signal>
+   <receiver>address</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>337</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>377</y>
     </hint>
    </hints>
   </connection>

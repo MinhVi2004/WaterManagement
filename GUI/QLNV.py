@@ -23,6 +23,7 @@ class QuanLyNhanVien(QMainWindow):
         self.btnReset.clicked.connect(self.reset_employee)
         self.searchbutton.clicked.connect(self.search_employee)
         self.btnHome.clicked.connect(self.openHome)
+        self.btnKH.clicked.connect(self.openKH)
     def load_data(self):
         """Load employee data into the table."""
         self.List.setRowCount(0)  # Clear table before loading new data
@@ -82,7 +83,8 @@ class QuanLyNhanVien(QMainWindow):
         password = self.password.text().strip()
         role = self.role.currentText().strip() 
         dateDK = self.dateDK.text().strip()
-        
+        parsed_date = datetime.strptime(dateDK, '%d-%b-%y')
+        dateDK = parsed_date.strftime('%d/%m/%Y') # Convert to desired format (format 'dd/mm/yyyy')
         self.NhanVienBUS.update_user(MaNV, name, email, password, role, dateDK) 
         QMessageBox.information(self, "Thành công", "Thông tin nhân viên đã được cập nhật!")
         print(dateDK)
@@ -126,4 +128,9 @@ class QuanLyNhanVien(QMainWindow):
         from GUI.AdminGUI import AdminGUI
         self.home = AdminGUI()
         self.home.show()
+        self.close()
+    def openKH(self):
+        from GUI.QLKH import QuanLyKhachHang
+        self.openKH = QuanLyKhachHang()
+        self.openKH.show()
         self.close()

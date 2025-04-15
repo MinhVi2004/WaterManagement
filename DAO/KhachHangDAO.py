@@ -25,7 +25,28 @@ class KhachHangDAO:
         if row:
             return KhachHangDTO(row[0], row[1], row[2], row[3], row[4])  # Trả về đối tượng DTO
         return None
+    def search_Customer(self, keyword, search_type): # search customer by name, email, phone, address or id
+        """Tìm kiếm khách hàng theo tên, email, số điện thoại hoặc địa chỉ"""
+        if search_type == "Họ Tên":
+            sql = "SELECT * FROM customers WHERE name LIKE %s"
+        elif search_type == "Email":
+            sql = "SELECT * FROM customers WHERE email LIKE %s"
+        elif search_type == "Số Điện Thoại":
+            sql = "SELECT * FROM customers WHERE phone LIKE %s"
+        elif search_type == "Địa Chỉ":
+            sql = "SELECT * FROM customers WHERE address LIKE %s"
+        elif search_type == "Mã KH":
+            sql = "SELECT * FROM customers WHERE id = %s"
+        else:
+            raise ValueError("Invalid search type")
 
+        self.cursor.execute(sql, ('%' + keyword + '%',))
+        rows = self.cursor.fetchall()
+        listKH = []
+        for row in rows:
+            user_dto = KhachHangDTO(row[0], row[1], row[2], row[3], row[4],row[5])
+            listKH.append(user_dto)
+        return listKH
     def insert_user(self, name, email, phone, address): # insert user with the creation date of today
         """Thêm user mới"""
         self.cursor.execute("SELECT MAX(id) FROM customers")

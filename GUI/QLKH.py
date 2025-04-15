@@ -8,7 +8,7 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
     def __init__(self):
         super().__init__()
         self.KhachHangBUS = KhachHangBUS()
-        uic.loadUi("./GUI/QuanLyKhachHang.ui", self)
+        uic.loadUi("./GUI/UI/QuanLyKhachHang.ui", self)
         self.load_data()
 
         # Connect row selection signal
@@ -18,8 +18,9 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
         self.btnAdd.clicked.connect(self.add_customer)
         self.btnDel.clicked.connect(self.delete_customer)
         self.searchbutton.clicked.connect(self.search_customer)
-        self.btnNV.clicked.connect(self.open_employee_ui)
-        self.btnHD.clicked.connect(self.open_reciept_ui)
+        self.btnNV.clicked.connect(self.openNV)
+        self.btnHD.clicked.connect(self.openHD)
+        self.btnHome.clicked.connect(self.openHome)
     def load_data(self):
         """Load customer data into the table."""
         self.List.setRowCount(0)  # Clear table before loading new data
@@ -122,17 +123,22 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
             self.List.setItem(row_index, 3, QTableWidgetItem(customer.phone))
             self.List.setItem(row_index, 4, QTableWidgetItem(customer.address)) 
             self.List.setItem(row_index, 5, QTableWidgetItem(str(customer.created_at)))
-    def open_employee_ui(self):
+    def openNV(self):
         """Open the employee management window."""
-        #TODO: CHANGE THESE NAME CORRESPOND TO THE REAL NAME OF THE FILES
-        from GUI.QLNhanVien import QuanLyNhanVien
+        from GUI.QLNV import QuanLyNhanVien
         self.employee_window = QuanLyNhanVien()
         self.employee_window.show()
         self.close()
 
-    def open_reciept_ui(self):
+    def openHD(self):
         #TODO: CHANGE THESE NAME CORRESPOND TO THE REAL NAME OF THE FILES
         from GUI.QLHoaDon import QuanLyHoaDon
         self.employee_window = QuanLyHoaDon()
         self.employee_window.show()
+        self.close()
+
+    def openHome(self):
+        from GUI.AdminGUI import AdminGUI
+        self.home_window = AdminGUI()
+        self.home_window.show()
         self.close()

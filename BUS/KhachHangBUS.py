@@ -9,7 +9,11 @@ class KhachHangBUS:
     def get_all(self):
         """Lấy danh sách khách hàng từ DAO"""
         return self.DAO.get_all()
-
+    def search_Customer(self, keyword, search_type):
+        """Tìm kiếm khách hàng"""
+        if search_type:
+            return self.DAO.search_Customer(keyword, search_type)
+            raise ValueError("Invalid search type")
     def insert_user(self, name, email, phone, address):
         # Example validation: check if email is in valid format
         if not re.match(r"[^@]+@[^@]+\.[^@]+", email): #[^@]+ means "one or more characters that are not @(john,nguyen,gmail,com)" && \. means a literal dot. && @ means a literal @

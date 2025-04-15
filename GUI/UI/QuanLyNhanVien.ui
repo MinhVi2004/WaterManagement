@@ -474,7 +474,7 @@
      <string>Quản lí nhân viên</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnHD_2">
+   <widget class="QPushButton" name="btnHD">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -490,7 +490,7 @@
      <string>Quản lí hóa đơn</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnKH_2">
+   <widget class="QPushButton" name="btnKH">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -513,12 +513,61 @@
      <x>0</x>
      <y>0</y>
      <width>1119</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>search</sender>
+   <signal>returnPressed()</signal>
+   <receiver>searchbutton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>680</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1013</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tenNV</sender>
+   <signal>returnPressed()</signal>
+   <receiver>email</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>285</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>email</sender>
+   <signal>returnPressed()</signal>
+   <receiver>password</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>285</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
