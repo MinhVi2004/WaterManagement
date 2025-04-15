@@ -16,16 +16,17 @@ class TinhTienNuoc(QMainWindow):
         #? Nút close, submit
         self.btnClose.clicked.connect(self.close)
         
-        self.txtMaKH.setText(customer_data["id"])
-        self.txtHoTen.setText(customer_data["name"])
-        self.txtSoDienThoai.setText(customer_data["phone"])
-        self.txtEmail.setText(customer_data["email"])
-        self.txtDiaChi.setText(customer_data["address"])
+        self.txtMaKH.setText(customer_data.id)
+        self.txtHoTen.setText(customer_data.name)
+        self.txtSoDienThoai.setText(customer_data.phone)
+        self.txtEmail.setText(customer_data.email)
+        self.txtDiaChi.setText(customer_data.address)
         
-        waterMeter = self.tinhTienNuocBUS.getWaterMeterById(customer_data["id"])
-        
-        self.txtMaDongHoNuoc.setText(str(waterMeter["id"]))
-        self.txtSoNuocTruoc.setText(str(waterMeter["meter_number"]))
+        waterMeter = self.tinhTienNuocBUS.getWaterMeterById(customer_data.id)
+
+        if waterMeter:
+            self.txtMaDongHoNuoc.setText(str(waterMeter.id))
+            self.txtSoNuocTruoc.setText(str(waterMeter.meter_number))
         
         # Gán sự kiện cho nút "Chụp Ảnh" và "Chọn Ảnh"
         self.btnCapture.clicked.connect(self.capture_image)

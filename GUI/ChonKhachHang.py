@@ -4,7 +4,7 @@ from PyQt6.QtCore import Qt
 from PyQt6 import uic
 from BUS.KhachHangBUS import KhachHangBUS
 from GUI.TinhTienNuoc import TinhTienNuoc
-
+from DTO.KhachHangDTO import KhachHangDTO 
 class ChonKhachHang(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -17,7 +17,7 @@ class ChonKhachHang(QMainWindow):
         self.txtSearch.textChanged.connect(self.timKiemKhachHang)
 
     def loadData(self):
-        listCustomer = self.customerBUS.getAllCustomers()
+        listCustomer = self.customerBUS.get_all()
         self.tbDanhSachKhachHang.setRowCount(len(listCustomer))
         self.tbDanhSachKhachHang.setColumnCount(5)
         self.tbDanhSachKhachHang.setHorizontalHeaderLabels(["Mã KH", "Họ tên", "Địa chỉ", "Số điện thoại", "Email"])
@@ -32,40 +32,43 @@ class ChonKhachHang(QMainWindow):
 
 
         for row, customer in enumerate(listCustomer):
-            item_id = QTableWidgetItem(str(customer["id"]))
+            item_id = QTableWidgetItem(str(customer.id))
             item_id.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
             self.tbDanhSachKhachHang.setItem(row, 0, item_id)
-            self.tbDanhSachKhachHang.setItem(row, 1, QTableWidgetItem(customer["name"]))
-            self.tbDanhSachKhachHang.setItem(row, 2, QTableWidgetItem(customer["address"]))
-            self.tbDanhSachKhachHang.setItem(row, 3, QTableWidgetItem(customer["phone"]))
-            self.tbDanhSachKhachHang.setItem(row, 4, QTableWidgetItem(customer["email"]))
+            self.tbDanhSachKhachHang.setItem(row, 1, QTableWidgetItem(customer.name))
+            self.tbDanhSachKhachHang.setItem(row, 2, QTableWidgetItem(customer.address))
+            self.tbDanhSachKhachHang.setItem(row, 3, QTableWidgetItem(customer.phone))
+            self.tbDanhSachKhachHang.setItem(row, 4, QTableWidgetItem(customer.email))
+
 
     def xacNhanKhachHang(self):
         selected_row = self.tbDanhSachKhachHang.currentRow()
         if selected_row == -1:
             return  # Không chọn khách nào
 
-        data = {
-            "id": self.tbDanhSachKhachHang.item(selected_row, 0).text(),
-            "name": self.tbDanhSachKhachHang.item(selected_row, 1).text(),
-            "address": self.tbDanhSachKhachHang.item(selected_row, 2).text(),
-            "phone": self.tbDanhSachKhachHang.item(selected_row, 3).text(),
-            "email": self.tbDanhSachKhachHang.item(selected_row, 4).text(),
-        }
+        # Create a KhachHangDTO object instead of a dictionary
+        customer_data = KhachHangDTO(
+            id=self.tbDanhSachKhachHang.item(selected_row, 0).text(),
+            name=self.tbDanhSachKhachHang.item(selected_row, 1).text(),
+            address=self.tbDanhSachKhachHang.item(selected_row, 2).text(),
+            phone=self.tbDanhSachKhachHang.item(selected_row, 3).text(),
+            email=self.tbDanhSachKhachHang.item(selected_row, 4).text(),
+            created_at=None  # Or use actual data if available
+        )
 
-        self.tinhTienNuoc = TinhTienNuoc(data)
+        self.tinhTienNuoc = TinhTienNuoc(customer_data)
         self.tinhTienNuoc.show()
         self.close()
     def timKiemKhachHang(self):
         keyword = self.txtSearch.toPlainText().strip()
         search_type = self.cbTypeSearch.currentText()
-        listCustomer = self.customerBUS.searchCustomer(keyword, search_type)
+        listCustomer = self.customerBUS.search_Customer(keyword, search_type)
         self.tbDanhSachKhachHang.setRowCount(len(listCustomer))
         for row, customer in enumerate(listCustomer):
-            item_id = QTableWidgetItem(str(customer["id"]))
+            item_id = QTableWidgetItem(str(customer.id))
             item_id.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
             self.tbDanhSachKhachHang.setItem(row, 0, item_id)
-            self.tbDanhSachKhachHang.setItem(row, 1, QTableWidgetItem(customer["name"]))
-            self.tbDanhSachKhachHang.setItem(row, 2, QTableWidgetItem(customer["address"]))
-            self.tbDanhSachKhachHang.setItem(row, 3, QTableWidgetItem(customer["phone"]))
-            self.tbDanhSachKhachHang.setItem(row, 4, QTableWidgetItem(customer["email"]))
+            self.tbDanhSachKhachHang.setItem(row, 1, QTableWidgetItem(customer.name))
+            self.tbDanhSachKhachHang.setItem(row, 2, QTableWidgetItem(customer.address))
+            self.tbDanhSachKhachHang.setItem(row, 3, QTableWidgetItem(customer.phone))
+            self.tbDanhSachKhachHang.setItem(row, 4, QTableWidgetItem(customer.email))
