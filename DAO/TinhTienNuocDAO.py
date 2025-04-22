@@ -4,8 +4,6 @@ class TinhTienNuocDAO:
     def __init__(self):
         self.db = Database()
 
-    from DTO.WaterMeterDTO import WaterMeterDTO  # Make sure this import is correct
-
     def getWaterMeterById(self, meter_id):
         query = "SELECT * FROM water_meters WHERE id = %s"
         result = self.db.fetch_all(query, (meter_id,))
