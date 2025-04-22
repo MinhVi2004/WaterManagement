@@ -8,7 +8,7 @@ class AdminGUI(QMainWindow):
         super().__init__()
         uic.loadUi('GUI/UI/Home.ui', self)
         self.btnNV.clicked.connect(self.openNV)
-        self.btnHD.clicked.connect(self.openNV)
+        self.btnHD.clicked.connect(self.openHD)
         self.btnKH.clicked.connect(self.openKH)
         self.btnHome.clicked.connect(self.openNV)
     
@@ -21,4 +21,9 @@ class AdminGUI(QMainWindow):
         from GUI.QLKH import QuanLyKhachHang
         self.openKH = QuanLyKhachHang()
         self.openKH.show()
+        self.close()
+    def openHD(self):
+        from GUI.QLHoaDon import QuanLyHoaDon
+        self.openHD = QuanLyHoaDon()
+        self.openHD.show()
         self.close()
