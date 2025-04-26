@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1307</width>
-    <height>619</height>
+    <width>1200</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>80</x>
       <y>50</y>
-      <width>1091</width>
-      <height>671</height>
+      <width>1200</width>
+      <height>700</height>
      </rect>
     </property>
     <property name="font">
@@ -120,6 +120,9 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="maKH">
      <property name="geometry">
@@ -137,6 +140,9 @@
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -171,6 +177,9 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
@@ -203,6 +212,9 @@
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
@@ -264,7 +276,7 @@
       <rect>
        <x>390</x>
        <y>60</y>
-       <width>541</width>
+       <width>371</width>
        <height>31</height>
       </rect>
      </property>
@@ -378,6 +390,9 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_7">
      <property name="geometry">
@@ -397,47 +412,11 @@
       <string>Chỉ số</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="newMeter">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>310</y>
-       <width>191</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>310</y>
-       <width>141</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Thời hạn</string>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="newMeter_2">
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>350</y>
+       <y>400</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -449,13 +428,16 @@
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>350</y>
+       <y>400</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -473,7 +455,7 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>390</y>
+       <y>310</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -486,12 +468,15 @@
      <property name="text">
       <string/>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_10">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>390</y>
+       <y>310</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -509,7 +494,7 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>430</y>
+       <y>350</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -522,12 +507,15 @@
      <property name="text">
       <string/>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>430</y>
+       <y>350</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -540,6 +528,36 @@
      <property name="text">
       <string>Người tạo</string>
      </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>770</x>
+       <y>60</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Mã Hóa Đơn</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mã Khách Hàng</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mã Nhân Viên</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Trạng Thái</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QPushButton" name="btnHD_2">
@@ -631,8 +649,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1307</width>
-     <height>26</height>
+     <width>1200</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>
