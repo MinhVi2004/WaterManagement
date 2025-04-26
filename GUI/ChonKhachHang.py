@@ -15,9 +15,13 @@ class ChonKhachHang(QMainWindow):
         self.dongHoNuocBUS = DongHoNuocBUS()
         self.loadData()
         self.btnSubmit.clicked.connect(self.xacNhanKhachHang)
-        self.btnClose.clicked.connect(self.close)
+        self.btnClose.clicked.connect(self.dangXuat)
         self.txtSearch.textChanged.connect(self.timKiemKhachHang)
-
+    def dangXuat(self):
+            from GUI.Login import Login_w
+            self.login = Login_w()
+            self.login.show()
+            self.close()      
     def loadData(self):
       listDHN = self.dongHoNuocBUS.get_all_dong_ho_nuoc()  # Lấy danh sách tất cả đồng hồ nước
       self.tbDanhSachKhachHang.setRowCount(len(listDHN))
