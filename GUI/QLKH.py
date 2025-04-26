@@ -20,7 +20,9 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
         self.searchbutton.clicked.connect(self.search_customer)
         self.btnNV.clicked.connect(self.openNV)
         self.btnHD.clicked.connect(self.openHD)
+        self.btnDHN.clicked.connect(self.openDHN)
         self.btnHome.clicked.connect(self.openHome)
+        self.btnDangXuat.clicked.connect(self.dangXuat)
     def load_data(self):
         """Load customer data into the table."""
         self.List.setRowCount(0)  # Clear table before loading new data
@@ -131,7 +133,6 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
         self.close()
 
     def openHD(self):
-        #TODO: CHANGE THESE NAME CORRESPOND TO THE REAL NAME OF THE FILES
         from GUI.QLHoaDon import QuanLyHoaDon
         self.employee_window = QuanLyHoaDon()
         self.employee_window.show()
@@ -141,4 +142,15 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
         from GUI.AdminGUI import AdminGUI
         self.home_window = AdminGUI()
         self.home_window.show()
+        self.close()
+    
+    def openDHN(self):
+        from GUI.QLDongHoNuoc import QuanLyDongHoNuoc
+        self.dongHoNuocWindow = QuanLyDongHoNuoc()
+        self.dongHoNuocWindow.show()
+        self.close()
+    def dangXuat(self):
+        from GUI.Login import Login_w
+        self.login = Login_w()
+        self.login.show()
         self.close()

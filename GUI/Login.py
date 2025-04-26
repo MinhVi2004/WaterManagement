@@ -28,11 +28,11 @@ class Login_w(QMainWindow):
                 
             if role == 'STAFF':
                 print("Chuyển tới giao diện Nhân viên")
-                self.openStaffForm()
+                self.openStaffForm(user)
         else:
             QMessageBox.warning(self, "Lỗi", "Tên đăng nhập hoặc mật khẩu không đúng!")
-    def openStaffForm(self):
-        self.staff_form = ChonKhachHang()
+    def openStaffForm(self, user):
+        self.staff_form = ChonKhachHang(user)
         self.staff_form.show()
         self.close()
     

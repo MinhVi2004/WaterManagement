@@ -1,62 +1,69 @@
-from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem, QAbstractItemView, QHeaderView
+from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem, QAbstractItemView, QHeaderView, QMessageBox
 from PyQt6.QtCore import Qt
 #? Load giao diện sử dụng uic
 from PyQt6 import uic
-from BUS.KhachHangBUS import KhachHangBUS
+from BUS.DongHoNuocBUS import DongHoNuocBUS
+from DTO.DongHoNuocDTO import DongHoNuocDTO
 from GUI.TinhTienNuoc import TinhTienNuoc
 from DTO.KhachHangDTO import KhachHangDTO 
 class ChonKhachHang(QMainWindow):
-    def __init__(self):
+    def __init__(self, user):
         super().__init__()
+        self.employee = user
         uic.loadUi("GUI/UI/chonKhachHangUI.ui", self)
 
-        self.customerBUS = KhachHangBUS()
+        self.dongHoNuocBUS = DongHoNuocBUS()
         self.loadData()
         self.btnSubmit.clicked.connect(self.xacNhanKhachHang)
         self.btnClose.clicked.connect(self.close)
         self.txtSearch.textChanged.connect(self.timKiemKhachHang)
 
     def loadData(self):
-        listCustomer = self.customerBUS.get_all()
-        self.tbDanhSachKhachHang.setRowCount(len(listCustomer))
-        self.tbDanhSachKhachHang.setColumnCount(5)
-        self.tbDanhSachKhachHang.setHorizontalHeaderLabels(["Mã KH", "Họ tên", "Địa chỉ", "Số điện thoại", "Email"])
-        self.tbDanhSachKhachHang.verticalHeader().setVisible(False)
-        self.tbDanhSachKhachHang.setColumnWidth(0, 100)
-        for col in range(1, 6):
+      listDHN = self.dongHoNuocBUS.get_all_dong_ho_nuoc()  # Lấy danh sách tất cả đồng hồ nước
+      self.tbDanhSachKhachHang.setRowCount(len(listDHN))
+      self.tbDanhSachKhachHang.setColumnCount(6)
+      self.tbDanhSachKhachHang.setHorizontalHeaderLabels(["Mã Đồng Hồ", "Khách Hàng", "Số điện thoại", "Số Nước Hiện Tại", "Địa Điểm", "Trạng Thái"])
+      self.tbDanhSachKhachHang.verticalHeader().setVisible(False)
+      self.tbDanhSachKhachHang.setColumnWidth(0, 100)
+      
+      for col in range(1, 6):
             self.tbDanhSachKhachHang.horizontalHeader().setSectionResizeMode(col, QHeaderView.ResizeMode.Stretch)
 
-        # Chỉ cho phép chọn nguyên hàng
-        self.tbDanhSachKhachHang.setSelectionBehavior(self.tbDanhSachKhachHang.SelectionBehavior.SelectRows)
-        self.tbDanhSachKhachHang.setSelectionMode(self.tbDanhSachKhachHang.SelectionMode.SingleSelection)
+      # Chỉ cho phép chọn nguyên hàng
+      self.tbDanhSachKhachHang.setSelectionBehavior(self.tbDanhSachKhachHang.SelectionBehavior.SelectRows)
+      self.tbDanhSachKhachHang.setSelectionMode(self.tbDanhSachKhachHang.SelectionMode.SingleSelection)
 
+      # Đổ dữ liệu
+      for row_idx, dong_ho_nuoc in enumerate(listDHN):
+            # Lấy thông tin khách hàng theo đồng hồ nước
+            customer = self.dongHoNuocBUS.get_customer_by_watermeter_id(dong_ho_nuoc.id)
 
-        for row, customer in enumerate(listCustomer):
-            item_id = QTableWidgetItem(str(customer.id))
-            item_id.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
-            self.tbDanhSachKhachHang.setItem(row, 0, item_id)
-            self.tbDanhSachKhachHang.setItem(row, 1, QTableWidgetItem(customer.name))
-            self.tbDanhSachKhachHang.setItem(row, 2, QTableWidgetItem(customer.address))
-            self.tbDanhSachKhachHang.setItem(row, 3, QTableWidgetItem(customer.phone))
-            self.tbDanhSachKhachHang.setItem(row, 4, QTableWidgetItem(customer.email))
+            # Nếu có khách hàng thì hiển thị, không thì để trống
+            customer_name = customer['name'] if customer else ''
+            customer_phone = customer['phone'] if customer else ''
+
+            self.tbDanhSachKhachHang.setItem(row_idx, 0, QTableWidgetItem(str(dong_ho_nuoc.id)))
+            self.tbDanhSachKhachHang.setItem(row_idx, 1, QTableWidgetItem(customer_name))
+            self.tbDanhSachKhachHang.setItem(row_idx, 2, QTableWidgetItem(customer_phone))
+            self.tbDanhSachKhachHang.setItem(row_idx, 3, QTableWidgetItem(str(dong_ho_nuoc.meter_number)))  # ví dụ: chỉ số nước hiện tại
+            self.tbDanhSachKhachHang.setItem(row_idx, 4, QTableWidgetItem(dong_ho_nuoc.location))
+            self.tbDanhSachKhachHang.setItem(row_idx, 5, QTableWidgetItem(dong_ho_nuoc.status))
 
 
     def xacNhanKhachHang(self):
         selected_row = self.tbDanhSachKhachHang.currentRow()
         if selected_row == -1:
+            QMessageBox.warning(self, "Cảnh báo", "Vui lòng chọn một khách hàng.")
             return  # Không chọn khách nào
 
         # Create a KhachHangDTO object instead of a dictionary
-        customer_data = KhachHangDTO(
-            id=self.tbDanhSachKhachHang.item(selected_row, 0).text(),
-            name=self.tbDanhSachKhachHang.item(selected_row, 1).text(),
-            address=self.tbDanhSachKhachHang.item(selected_row, 2).text(),
-            phone=self.tbDanhSachKhachHang.item(selected_row, 3).text(),
-            email=self.tbDanhSachKhachHang.item(selected_row, 4).text(),
-            created_at=None  # Or use actual data if available
-        )
+        watermeter_id = self.tbDanhSachKhachHang.item(selected_row, 0).text()
 
-        self.tinhTienNuoc = TinhTienNuoc(customer_data)
+            # Gọi phương thức get_customer_by_watermeter_id với watermeter_id
+        customer = self.dongHoNuocBUS.get_customer_by_watermeter_id(watermeter_id)
+        customer_data = KhachHangDTO(customer['id'], customer['name'], customer['email'], customer['phone'], customer['address'], customer['created_at'])
+        waterMeter_data = self.dongHoNuocBUS.get_dong_ho_nuoc_by_id(watermeter_id)
+        self.tinhTienNuoc = TinhTienNuoc(self.employee, customer_data, waterMeter_data)
         self.tinhTienNuoc.show()
         self.close()
     def timKiemKhachHang(self):

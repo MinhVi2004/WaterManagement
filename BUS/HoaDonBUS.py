@@ -13,7 +13,12 @@ class HoaDonBUS:
     def get_bill_by_id(self, id):
         """Lấy hóa đơn theo ID"""
         return self.hoa_don_dao.get_invoice(id)
-
+    def get_customer_by_id(self, id):
+          """Lấy hóa đơn theo ID"""
+          return self.hoa_don_dao.get_customer_by_id(id)
+    def get_employee_by_id(self, id):
+          """Lấy hóa đơn theo ID"""
+          return self.hoa_don_dao.get_employee_by_id(id)
     def search_bills(self, keyword, search_type):
         """Tìm kiếm hóa đơn theo các tiêu chí"""
         return self.hoa_don_dao.search_invoice(keyword, search_type)
