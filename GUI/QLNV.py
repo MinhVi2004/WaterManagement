@@ -24,6 +24,9 @@ class QuanLyNhanVien(QMainWindow):
         self.searchbutton.clicked.connect(self.search_employee)
         self.btnHome.clicked.connect(self.openHome)
         self.btnKH.clicked.connect(self.openKH)
+        self.btnDHN.clicked.connect(self.openDHN)
+        self.btnHD.clicked.connect(self.openHD)
+        self.btnDangXuat.clicked.connect(self.dangXuat)
     def load_data(self):
         """Load employee data into the table."""
         self.List.setRowCount(0)  # Clear table before loading new data
@@ -133,4 +136,19 @@ class QuanLyNhanVien(QMainWindow):
         from GUI.QLKH import QuanLyKhachHang
         self.openKH = QuanLyKhachHang()
         self.openKH.show()
+        self.close()
+    def openHD(self):
+        from GUI.QLHoaDon import QuanLyHoaDon
+        self.employee_window = QuanLyHoaDon()
+        self.employee_window.show()
+        self.close()
+    def openDHN(self):
+        from GUI.QLDongHoNuoc import QuanLyDongHoNuoc
+        self.dongHoNuocWindow = QuanLyDongHoNuoc()
+        self.dongHoNuocWindow.show()
+        self.close()
+    def dangXuat(self):
+        from GUI.Login import Login_w
+        self.login = Login_w()
+        self.login.show()
         self.close()

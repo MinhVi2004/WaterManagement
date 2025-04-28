@@ -10,7 +10,8 @@ class AdminGUI(QMainWindow):
         self.btnNV.clicked.connect(self.openNV)
         self.btnHD.clicked.connect(self.openHD)
         self.btnKH.clicked.connect(self.openKH)
-        self.btnHome.clicked.connect(self.openNV)
+        self.btnDHN.clicked.connect(self.openDHN)
+        self.btnDangXuat.clicked.connect(self.dangXuat)
     
     def openNV(self):
         from GUI.QLNV import QuanLyNhanVien
@@ -26,4 +27,14 @@ class AdminGUI(QMainWindow):
         from GUI.QLHoaDon import QuanLyHoaDon
         self.openHD = QuanLyHoaDon()
         self.openHD.show()
+        self.close()
+    def openDHN(self):
+        from GUI.QLDongHoNuoc import QuanLyDongHoNuoc
+        self.dongHoNuocWindow = QuanLyDongHoNuoc()
+        self.dongHoNuocWindow.show()
+        self.close()
+    def dangXuat(self):
+        from GUI.Login import Login_w
+        self.login = Login_w()
+        self.login.show()
         self.close()

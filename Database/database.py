@@ -6,6 +6,7 @@ class Database:
     def __init__(self):
         """Khởi tạo kết nối database."""
         self.conn = None
+        self.cursor = None
         try:
             self.conn = mysql.connector.connect(**DB_CONFIG)
             self.cursor = self.conn.cursor(dictionary=True)

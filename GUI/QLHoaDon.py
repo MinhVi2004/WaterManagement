@@ -15,11 +15,9 @@ class QuanLyHoaDon(QMainWindow):
         self.btnHome.clicked.connect(self.openHome)
         self.btnKH_2.clicked.connect(self.openKH)
         self.btnNV_2.clicked.connect(self.openNV)
-        self.btnAdd.clicked.connect(self.add_hoa_don)
-        self.btnEdit.clicked.connect(self.edit_hoa_don)
-        self.btnDel.clicked.connect(self.delete_hoa_don)
+        self.btnDHN_2.clicked.connect(self.openDHN)
+        self.btnDangXuat.clicked.connect(self.dangXuat)
         self.pushButton_6.clicked.connect(self.search_hoa_don)
-        self.btnReset.clicked.connect(self.reset_fields)
 
         self.update_table()
     @pyqtSlot(int, int)
@@ -42,11 +40,11 @@ class QuanLyHoaDon(QMainWindow):
             self.List.insertRow(row_position)
 
             self.List.setItem(row_position, 0, QTableWidgetItem(str(hoa_don.id)))
-            self.List.setItem(row_position, 1, QTableWidgetItem(self.hoaDonBus.get_customer_by_id(hoa_don.customer_id)))
-            self.List.setItem(row_position, 2, QTableWidgetItem(self.hoaDonBus.get_employee_by_id(hoa_don.customer_id)))
+            self.List.setItem(row_position, 1, QTableWidgetItem(str(self.hoaDonBus.get_customer_by_id(hoa_don.customer_id))))
+            self.List.setItem(row_position, 2, QTableWidgetItem(str(self.hoaDonBus.get_employee_by_id(hoa_don.processed_by))))
             self.List.setItem(row_position, 3, QTableWidgetItem(str(hoa_don.meter_id)))
-            self.List.setItem(row_position, 5, QTableWidgetItem(str(hoa_don.amount)))  # Could be due date or amount
-            self.List.setItem(row_position, 4, QTableWidgetItem(str(hoa_don.totalBill)))
+            self.List.setItem(row_position, 4, QTableWidgetItem(str(hoa_don.amount)))
+            self.List.setItem(row_position, 5, QTableWidgetItem(str(hoa_don.totalBill)))  # Could be due date or amount
             self.List.setItem(row_position, 6, QTableWidgetItem(str(hoa_don.status)))
             self.List.setItem(row_position, 7, QTableWidgetItem(str(hoa_don.created_at)))
 
@@ -141,6 +139,16 @@ class QuanLyHoaDon(QMainWindow):
         from GUI.AdminGUI import AdminGUI
         self.home_window = AdminGUI()
         self.home_window.show()
+        self.close()
+    def openDHN(self):
+        from GUI.QLDongHoNuoc import QuanLyDongHoNuoc
+        self.dongHoNuocWindow = QuanLyDongHoNuoc()
+        self.dongHoNuocWindow.show()
+        self.close()
+    def dangXuat(self):
+        from GUI.Login import Login_w
+        self.login = Login_w()
+        self.login.show()
         self.close()
 
 if __name__ == "__main__":

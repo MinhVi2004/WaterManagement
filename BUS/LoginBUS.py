@@ -1,5 +1,5 @@
 from Database.database import Database
-
+from DTO.NhanVienDTO import NhanVienDTO
 class LoginBUS:
     def __init__(self):
         self.db = Database()
@@ -10,5 +10,5 @@ class LoginBUS:
         result = self.db.fetch_all(query, params)
 
         if result and len(result) > 0:
-            return result[0]  # Trả về user dạng dict
+            return result[0]  # Trả về thông tin nhân viên đầu tiên tìm thấy
         return None
