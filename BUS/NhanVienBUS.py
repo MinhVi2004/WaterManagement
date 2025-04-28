@@ -1,7 +1,5 @@
-# Business Logic Layer (BUS) - Kiểm tra và xử lý logic nghiệp vụ
 from datetime import datetime
 from DAO.NhanVienDAO import NhanVienDAO
-from DTO.NhanVienDTO import Role
 import re
 
 class NhanVienBUS:
@@ -14,51 +12,45 @@ class NhanVienBUS:
     def get_all(self):
         return self.DAO.get_all()
 
-    def check_user(self, name, email, password, role):
-        """Kiểm tra tính hợp lệ của dữ liệu người dùng"""
+    def check_user(self, name, email, phone, password, role, status):
         name = name.strip().title()
-        if not all(part.isalpha() for part in name.split()):
+        if not name.replace(" ", "").isalpha():
             raise ValueError("Tên chỉ được chứa chữ cái và khoảng trắng!")
 
-        if not re.match(r"[^@]+@[^@]+\.[^@]+", email): 
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
             raise ValueError("Email không đúng định dạng!")
 
         if len(password) < 6:
             raise ValueError("Mật khẩu phải có ít nhất 6 ký tự!")
 
-        try:
-            role = Role(role)
-        except ValueError:
-            raise ValueError(f"Role không hợp lệ! Phải là một trong {[r.value for r in Role]}")
+        if not phone.isdigit():
+            raise ValueError("Số điện thoại chỉ được chứa số!")
 
-        return name, email, password, role
+        if not phone.startswith("0"):
+            raise ValueError("Số điện thoại phải bắt đầu bằng số 0!")
 
-    def insert_user(self, name, email, password, role):
-        """Thêm người dùng mới"""
-        name, email, password, role = self.check_user(name, email, password, role)
+        if len(phone) != 10:
+            raise ValueError("Số điện thoại phải có 10 chữ số")
+        return name, email, phone, password, role, status
 
+    def insert_user(self, name, email, phone, password, role, status):
+        name, email, phone, password, role, status = self.check_user(name, email, phone, password, role, status)
         if self.DAO.email_exists(email):
             raise ValueError("Email đã tồn tại!")
+        return self.DAO.insert_user(name, phone, email, password, role, status)
 
-        new_user_id = self.DAO.insert_user(name, email, password, role.value)
-        return new_user_id
-    
-    def update_user(self, id, name, email, password, role, NgayDangKy):
-        """Cập nhật thông tin người dùng"""
-        name, email, password, role = self.check_user(name, email, password, role)
-
+    def update_user(self, id, name, email, phone, password, role, created_at, status):
+        name, email, phone, password, role, status = self.check_user(name, email, phone, password, role, status)
         try:
-            NgayDangKy = datetime.strptime(NgayDangKy, "%d/%m/%Y").strftime("%Y-%m-%d")
+            created_at = datetime.strptime(created_at, "%d/%m/%Y").strftime("%Y-%m-%d")
         except ValueError:
             raise ValueError("Ngày đăng ký không đúng định dạng 'DD/MM/YYYY'!")
-
-        self.DAO.update_user(id, name, email, password, role.value, NgayDangKy)
+        self.DAO.update_user(id, name, phone, email, password, role, created_at, status)
+    
     def delete_user(self, maNV):
-        """Xóa người dùng theo mã nhân viên"""
         return self.DAO.delete_user(maNV)
 
     def validate_login(self, email, password):
-        """Xác thực đăng nhập"""
         return self.DAO.validate_login(email, password)
 
     def close(self):

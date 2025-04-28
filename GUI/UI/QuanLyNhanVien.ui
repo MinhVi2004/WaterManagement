@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1309</width>
     <height>700</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>1091</width>
+      <width>1281</width>
       <height>581</height>
      </rect>
     </property>
@@ -73,7 +73,7 @@
     <widget class="QPushButton" name="btnDel">
      <property name="geometry">
       <rect>
-       <x>960</x>
+       <x>360</x>
        <y>530</y>
        <width>93</width>
        <height>28</height>
@@ -164,7 +164,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>270</y>
+       <y>310</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -182,7 +182,7 @@
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>230</y>
+       <y>270</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -197,7 +197,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>230</y>
+       <y>270</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -261,13 +261,16 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="placeholderText">
+      <string>Nhập tên hoặc số điện thoại</string>
+     </property>
     </widget>
-    <widget class="QTableWidget" name="List">
+    <widget class="QTableWidget" name="tableNV">
      <property name="geometry">
       <rect>
        <x>410</x>
        <y>100</y>
-       <width>661</width>
+       <width>861</width>
        <height>421</height>
       </rect>
      </property>
@@ -281,6 +284,9 @@
       <font>
        <pointsize>8</pointsize>
       </font>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
      <property name="textElideMode">
       <enum>Qt::ElideRight</enum>
@@ -315,6 +321,11 @@
      </column>
      <column>
       <property name="text">
+       <string>Số điện thoại</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Email</string>
       </property>
      </column>
@@ -331,6 +342,11 @@
      <column>
       <property name="text">
        <string>Ngày vào làm</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Trạng thái</string>
       </property>
      </column>
     </widget>
@@ -371,7 +387,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>310</y>
+       <y>350</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -389,7 +405,7 @@
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>310</y>
+       <y>350</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -404,7 +420,7 @@
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>270</y>
+       <y>310</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -424,6 +440,84 @@
        <string>ADMIN</string>
       </property>
      </item>
+    </widget>
+    <widget class="QLineEdit" name="phone">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>230</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>230</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Số điện thoại</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>390</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Tình Trạng</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>390</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Hoạt động</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+     <property name="tristate">
+      <bool>false</bool>
+     </property>
     </widget>
    </widget>
    <widget class="QPushButton" name="btnHome">
@@ -525,7 +619,7 @@
    <widget class="QPushButton" name="btnDangXuat">
     <property name="geometry">
      <rect>
-      <x>1020</x>
+      <x>1170</x>
       <y>10</y>
       <width>111</width>
       <height>41</height>
@@ -541,8 +635,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>22</height>
+     <width>1309</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>

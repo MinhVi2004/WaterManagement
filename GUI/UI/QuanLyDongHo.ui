@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>700</height>
+    <width>1313</width>
+    <height>703</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -121,7 +121,7 @@
      <rect>
       <x>30</x>
       <y>49</y>
-      <width>1141</width>
+      <width>1271</width>
       <height>691</height>
      </rect>
     </property>
@@ -219,7 +219,7 @@
       <rect>
        <x>420</x>
        <y>80</y>
-       <width>681</width>
+       <width>811</width>
        <height>421</height>
       </rect>
      </property>
@@ -494,7 +494,7 @@
    <widget class="QPushButton" name="btnDangXuat">
     <property name="geometry">
      <rect>
-      <x>1020</x>
+      <x>1170</x>
       <y>10</y>
       <width>111</width>
       <height>41</height>
@@ -510,8 +510,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>22</height>
+     <width>1313</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>

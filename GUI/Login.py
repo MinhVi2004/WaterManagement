@@ -18,19 +18,23 @@ class Login_w(QMainWindow):
 
         user = self.login_bus.check_login(username, password)
 
-        if user:
-            role = user['role']  # Vì `user` là dict
-            QMessageBox.information(self, "Thành công", f"Đăng nhập thành công với vai trò: {role}!")
+        if user :
+            if user["status"] == 1:
+                role = user['role']  
+                QMessageBox.information(self, "Thành công", f"Đăng nhập thành công với vai trò: {role}!")
 
-            if role == 'ADMIN':
-                print("Chuyển tới giao diện Admin")
-                self.openAdminForm()
-                
-            if role == 'STAFF':
-                print("Chuyển tới giao diện Nhân viên")
-                self.openStaffForm(user)
+                if role == 'ADMIN':
+                    print("Chuyển tới giao diện Admin")
+                    self.openAdminForm()
+                    
+                if role == 'STAFF':
+                    print("Chuyển tới giao diện Nhân viên")
+                    self.openStaffForm(user)
+            else:
+                QMessageBox.warning(self,"Lỗi","Tài khoản đã bị khóa")
         else:
             QMessageBox.warning(self, "Lỗi", "Tên đăng nhập hoặc mật khẩu không đúng!")
+            
     def openStaffForm(self, user):
         self.staff_form = ChonKhachHang(user)
         self.staff_form.show()
