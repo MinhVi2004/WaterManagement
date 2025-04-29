@@ -11,4 +11,4 @@ class HoaDonDTO:
         self.processed_by = processed_by
 
     def __str__(self):
-        return f"HoaDon (id={self.id}, customer_id={self.customer_id}, meter_id={self.meter_id}, reading_id={self.reading_id}, amount={self.amount}, totalBill={self.totalBill}, status={self.status}, created_at={self.cerated_at}, processed_by={self.processed_by})"
+        return f"HoaDon (id={self.id}, customer_id={self.customer_id}, meter_id={self.meter_id}, reading_id={self.reading_id}, amount={self.amount}, totalBill={self.totalBill} status={self.status}, created_at={self.cerated_at}, processed_by={self.processed_by})"

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1098</width>
-    <height>670</height>
+    <width>1310</width>
+    <height>696</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,8 +32,8 @@ background-position: center;
    <widget class="QLineEdit" name="UserEmail">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>269</y>
+      <x>530</x>
+      <y>250</y>
       <width>231</width>
       <height>31</height>
      </rect>
@@ -56,8 +56,8 @@ background-position: center;
    <widget class="QLineEdit" name="UserPassword">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>321</y>
+      <x>530</x>
+      <y>302</y>
       <width>231</width>
       <height>31</height>
      </rect>
@@ -83,8 +83,8 @@ background-position: center;
    <widget class="QPushButton" name="btnLogin">
     <property name="geometry">
      <rect>
-      <x>422</x>
-      <y>390</y>
+      <x>542</x>
+      <y>371</y>
       <width>211</width>
       <height>28</height>
      </rect>
@@ -107,16 +107,19 @@ background-position: center;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>150</y>
-      <width>251</width>
+      <x>510</x>
+      <y>160</y>
+      <width>271</width>
       <height>91</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>30</pointsize>
+      <pointsize>24</pointsize>
      </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -124,7 +127,39 @@ background-position: center;
     <property name="text">
      <string>Đăng nhập</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-5</y>
+      <width>1321</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../image/homeBG.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label</zorder>
    <zorder>UserPassword</zorder>
    <zorder>btnLogin</zorder>
    <zorder>label_3</zorder>
@@ -135,7 +170,7 @@ background-position: center;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1098</width>
+     <width>1310</width>
      <height>26</height>
     </rect>
    </property>

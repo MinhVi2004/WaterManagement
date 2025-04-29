@@ -23,7 +23,7 @@ class KhachHangDAO:
         self.cursor.execute("SELECT * FROM customers WHERE id = %s", (id,))
         row = self.cursor.fetchone()
         if row:
-            return KhachHangDTO(row[0], row[1], row[2], row[3], row[4])  # Trả về đối tượng DTO
+            return KhachHangDTO(row[0], row[1], row[2], row[3], row[4], row[5])  # Trả về đối tượng DTO
         return None
     def search_Customer(self, keyword, search_type): # search customer by name, email, phone, address or id
         """Tìm kiếm khách hàng theo tên, email, số điện thoại hoặc địa chỉ"""

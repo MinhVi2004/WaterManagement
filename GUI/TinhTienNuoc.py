@@ -1,4 +1,5 @@
-from PyQt6.QtWidgets import QMainWindow, QFileDialog
+from PyQt6.QtWidgets import QMainWindow, QFileDialog, QMessageBox
+from PyQt6.QtCore import QLocale
 from PyQt6 import uic
 from PyQt6.QtGui import QPixmap
 from BUS.TinhTienNuocBUS import TinhTienNuocBUS
@@ -6,32 +7,31 @@ import cv2
 import datetime
 import os
 import shutil
-
 class TinhTienNuoc(QMainWindow):
-    def __init__(self, customer_data):
+    def __init__(self, employee, customer_data, waterMeter_data):
         super().__init__()
+        self.image_url = None  # Biến để lưu đường dẫn ảnh đã chọn
+        self.employee = employee  # Nhân viên hiện tại
         self.tinhTienNuocBUS = TinhTienNuocBUS()
         uic.loadUi("GUI/UI/tinhTienNuocUI.ui", self)
         
-        #? Nút close, submit
-        self.btnClose.clicked.connect(self.close)
         
-        self.txtMaKH.setText(customer_data.id)
+        self.txtMaKH.setText(str(customer_data.id))
         self.txtHoTen.setText(customer_data.name)
         self.txtSoDienThoai.setText(customer_data.phone)
         self.txtEmail.setText(customer_data.email)
         self.txtDiaChi.setText(customer_data.address)
         
-        waterMeter = self.tinhTienNuocBUS.getWaterMeterById(customer_data.id)
 
-        if waterMeter:
-            self.txtMaDongHoNuoc.setText(str(waterMeter.id))
-            self.txtSoNuocTruoc.setText(str(waterMeter.meter_number))
-        
+        if waterMeter_data:
+            self.txtMaDongHoNuoc.setText(str(waterMeter_data.id))
+            self.txtSoNuocTruoc.setText(str(waterMeter_data.meter_number))
+        self.txtSoNuocSau.returnPressed.connect(self.calculate_amount)
         # Gán sự kiện cho nút "Chụp Ảnh" và "Chọn Ảnh"
         self.btnCapture.clicked.connect(self.capture_image)
         self.btnChoose.clicked.connect(self.open_file_dialog)
-    
+        self.btnClose.clicked.connect(self.openChonKhachHang)
+        self.btnSubmit.clicked.connect(self.submit_data)
     def display_image(self, file_path):
         """Hiển thị ảnh lên QLabel"""
         pixmap = QPixmap(file_path)
@@ -57,18 +57,18 @@ class TinhTienNuoc(QMainWindow):
             if key == 27:  # Nhấn ESC để thoát
                 break
             elif key == 32:  # Nhấn SPACE để chụp
-                maKH = self.txtMaKH.toPlainText().strip()
-                maDHN = self.txtMaDongHoNuoc.toPlainText().strip()
+                maKH = self.txtMaKH.text().strip()
+                maDHN = self.txtMaDongHoNuoc.text().strip()
 
                 
-                ngayChup = datetime.datetime.now().strftime("%d%m%Y_%H%M%S")
+                ngayChup = datetime.datetime.now().strftime("%d%m%Y")
                 file_name = f"{maKH}_{maDHN}_{ngayChup}.jpg"
-                
                 save_dir = "Resource/CaptureIMG"
                 os.makedirs(save_dir, exist_ok=True)
 
                 file_path = os.path.join(save_dir, file_name)
                 cv2.imwrite(file_path, frame)
+                self.image_url = file_name
                 print(f"Ảnh đã được lưu vào : {file_path}")
                 self.display_image(file_path)  
                 break
@@ -81,11 +81,10 @@ class TinhTienNuoc(QMainWindow):
         file_path, _ = QFileDialog.getOpenFileName(self, "Chọn ảnh", "", "Images (*.png *.jpg *.jpeg *.bmp)")
         
         if file_path:
-            self.display_image(file_path)
             print(f"Ảnh đã chọn: {file_path}")
 
-            maKH = self.txtMaKH.toPlainText().strip()
-            maDHN = self.txtMaDongHoNuoc.toPlainText().strip()
+            maKH = self.txtMaKH.text().strip()
+            maDHN = self.txtMaDongHoNuoc.text().strip()
 
             
             ngayChup = datetime.datetime.now().strftime("%d%m%Y_%H%M%S")
@@ -96,6 +95,65 @@ class TinhTienNuoc(QMainWindow):
 
             save_path = os.path.join(save_dir, file_name)
             shutil.copy(file_path, save_path)
+            self.image_url = file_name  
             print(f"Ảnh đã được lưu vào: {save_path}")
+            self.display_image(file_path)
         else:
             print("Không có ảnh nào được chọn.")
+    def calculate_amount(self):
+            giaTienNuoc = 3000
+            """Tính toán số tiền dựa trên số nước đã sử dụng"""
+            try:
+               soNuocTruoc = float(self.txtSoNuocTruoc.text())
+               soNuocSau = float(self.txtSoNuocSau.text())
+               if soNuocSau < soNuocTruoc:
+                     QMessageBox.warning(self, "Lỗi", "Số nước sau không được nhỏ hơn số nước trước!")
+                     return
+               soNuocDaSuDung = soNuocSau - soNuocTruoc
+               self.txtTongTieuThu.setText(str(soNuocDaSuDung))
+               tongTien = soNuocDaSuDung * giaTienNuoc
+               # Định dạng tổng tiền theo kiểu tiền tệ
+               locale = QLocale()  # Sử dụng locale mặc định
+               formatted_tongTien = locale.toCurrencyString(tongTien)
+               self.txtTongTien.setText(str(formatted_tongTien))
+            except ValueError:
+               self.txtSoTien.setText("")
+            
+    def openChonKhachHang(self):
+        from GUI.ChonKhachHang import ChonKhachHang
+        """Mở giao diện Chọn Khách Hàng"""
+        self.chonKhachHang = ChonKhachHang(self.employee)
+        self.chonKhachHang.show()
+        self.close()
+    def parse_money_to_int(self, value_str):
+      # Bỏ ký hiệu tiền và khoảng trắng
+      cleaned = value_str.replace("₫", "").strip()
+      # Xoá dấu phân cách nghìn
+      cleaned = cleaned.replace(".", "")
+      # Thay dấu phẩy thành dấu chấm (nếu cần dùng float)
+      cleaned = cleaned.replace(",", ".")
+      # Ép sang float rồi lấy int (nếu muốn bỏ phần lẻ)
+      return int(float(cleaned))
+    def submit_data(self):
+      if self.image_url is None:
+         QMessageBox.warning(self, "Lỗi", "Vui lòng chọn ảnh trước khi gửi!")
+         return
+      self.calculate_amount()
+      if self.txtSoNuocSau.text().strip() == "":
+         QMessageBox.warning(self, "Lỗi", "Vui lòng nhập đầy đủ thông tin!")
+         return
+      maKH = self.txtMaKH.text().strip()
+      maDHN = self.txtMaDongHoNuoc.text().strip()
+      tongTieuThu = self.txtTongTieuThu.text().strip()
+      tongTien = self.parse_money_to_int(self.txtTongTien.text().strip())
+      maNV = self.employee["id"]
+      soNuocTruoc = self.txtSoNuocTruoc.text().strip()
+      soNuocSau = self.txtSoNuocSau.text().strip()
+      
+      self.tinhTienNuocBUS.createWaterMeterReading(maKH, maDHN, soNuocTruoc, soNuocSau, self.image_url, maNV, tongTieuThu, tongTien)
+      
+      QMessageBox.information(self, "Thành công", "Đã tạo hóa đơn thành công!")
+      self.openChonKhachHang()
+      
+      
+      

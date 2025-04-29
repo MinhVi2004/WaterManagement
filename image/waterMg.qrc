@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="picture">
+    <file>background.jpg</file>
+    <file>waterMg.qrc</file>
+  </qresource>
+</RCC>

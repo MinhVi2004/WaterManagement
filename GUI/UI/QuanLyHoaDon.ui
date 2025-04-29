@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>700</height>
+    <width>1310</width>
+    <height>638</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>1200</width>
-      <height>700</height>
+      <y>39</y>
+      <width>1291</width>
+      <height>551</height>
      </rect>
     </property>
     <property name="font">
@@ -34,60 +34,6 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
-    <widget class="QPushButton" name="btnAdd">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>530</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Thêm</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnEdit">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>530</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Sửa</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnDel">
-     <property name="geometry">
-      <rect>
-       <x>960</x>
-       <y>530</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Xóa</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
@@ -199,24 +145,6 @@
       <string>Mã máy nước</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btnReset">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>530</y>
-       <width>101</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Làm mới</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_6">
      <property name="geometry">
       <rect>
@@ -255,7 +183,7 @@
       <rect>
        <x>390</x>
        <y>100</y>
-       <width>681</width>
+       <width>881</width>
        <height>421</height>
       </rect>
      </property>
@@ -649,14 +577,43 @@
      <string>Trang Chủ</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnDHN_2">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>10</y>
+      <width>141</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Quản lí đồng hồ nước</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDangXuat">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>10</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Đăng Xuất</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>22</height>
+     <width>1310</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
