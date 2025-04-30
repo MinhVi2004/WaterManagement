@@ -8,7 +8,7 @@ class NhanVienDAO:
         self.db = Database()
 
     def get_all(self):
-        sql = "SELECT * FROM employees"
+        sql = "SELECT * FROM employees WHERE status = 1"
         rows = self.db.fetch_all(sql)
         listNV = []
         for row in rows:
@@ -53,7 +53,7 @@ class NhanVienDAO:
         rows = self.db.fetch_all(check_sql, (id,))
         if not rows:
             raise ValueError(f"Không tìm thấy nhân viên với ID: {id}")
-        delete_sql = "DELETE FROM employees WHERE id = %s"
+        delete_sql = "UPDATE employees SET status = 0 where id = %s"
         return self.db.execute_query(delete_sql, (id,))
 
     def validate_login(self, email, password):

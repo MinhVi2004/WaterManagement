@@ -29,8 +29,8 @@ class QuanLyNhanVien(QMainWindow):
             self.tableNV.insertRow(row_index)
             self.tableNV.setItem(row_index, 0, QTableWidgetItem(str(employee.id)))
             self.tableNV.setItem(row_index, 1, QTableWidgetItem(employee.name))
-            self.tableNV.setItem(row_index, 2, QTableWidgetItem(employee.email))
-            self.tableNV.setItem(row_index, 3, QTableWidgetItem(employee.phone))
+            self.tableNV.setItem(row_index, 2, QTableWidgetItem(employee.phone))
+            self.tableNV.setItem(row_index, 3, QTableWidgetItem(employee.email))
             self.tableNV.setItem(row_index, 4, QTableWidgetItem(employee.password))
             self.tableNV.setItem(row_index, 5, QTableWidgetItem(str(employee.role)))
             self.tableNV.setItem(row_index, 6, QTableWidgetItem(str(employee.created_at)))
@@ -48,8 +48,8 @@ class QuanLyNhanVien(QMainWindow):
     def fill_fields(self, row):
         self.maNV.setText(self.tableNV.item(row, 0).text())
         self.tenNV.setText(self.tableNV.item(row, 1).text())
-        self.email.setText(self.tableNV.item(row, 2).text())
-        self.phone.setText(self.tableNV.item(row, 3).text())
+        self.phone.setText(self.tableNV.item(row, 2).text())
+        self.email.setText(self.tableNV.item(row, 3).text())
         self.password.setText(self.tableNV.item(row, 4).text())
         self.role.setCurrentText(self.tableNV.item(row, 5).text())
         date_str = self.tableNV.item(row, 6).text()
@@ -80,6 +80,7 @@ class QuanLyNhanVien(QMainWindow):
                 raise ValueError("Không thể thêm nhân viên!")
             QMessageBox.information(self, "Thành công", f"Đã thêm nhân viên mới với ID: {new_id}")
             self.load_data()
+            self.reset_employee()
         except Exception as e:
             QMessageBox.critical(self, "Lỗi", f"{str(e)}")
 
@@ -110,6 +111,7 @@ class QuanLyNhanVien(QMainWindow):
                 self.NhanVienBUS.update_user(maNV, name, email, phone, password, role, dateDK, status)
                 QMessageBox.information(self, "Thành công", "Thông tin nhân viên đã được cập nhật!")
                 self.load_data()
+                self.reset_employee()
             except Exception as e:
                 QMessageBox.critical(self, "Lỗi", f"{str(e)}")
 
@@ -128,6 +130,7 @@ class QuanLyNhanVien(QMainWindow):
                 self.NhanVienBUS.delete_user(maNV)
                 QMessageBox.information(self, "Thành công", "Nhân viên đã được xóa!")
                 self.load_data()
+                self.reset_employee()
             except Exception as e:
                 QMessageBox.critical(self, "Lỗi", f"{str(e)}")
 

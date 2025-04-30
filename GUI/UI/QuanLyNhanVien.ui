@@ -451,7 +451,7 @@ QScrollBar::sub-line:horizontal {
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>190</y>
+       <y>230</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -472,7 +472,7 @@ color:white;</string>
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>190</y>
+       <y>230</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -560,7 +560,7 @@ color:white;</string>
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>230</y>
+       <y>190</y>
        <width>191</width>
        <height>31</height>
       </rect>
@@ -581,7 +581,7 @@ color:white;</string>
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>230</y>
+       <y>190</y>
        <width>141</width>
        <height>31</height>
       </rect>
