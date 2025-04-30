@@ -21,7 +21,6 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
         self.btnNV.clicked.connect(self.openNV)
         self.btnHD.clicked.connect(self.openHD)
         self.btnDHN.clicked.connect(self.openDHN)
-        self.btnHome.clicked.connect(self.openHome)
         self.btnDangXuat.clicked.connect(self.dangXuat)
     def load_data(self):
         """Load customer data into the table."""
@@ -66,8 +65,11 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
             new_id = self.KhachHangBUS.insert_user(name, email, phone, address)
             QMessageBox.information(self, "Thành công", f"Đã thêm khách hàng mới với ID: {new_id}")
             self.load_data()  # Refresh table
+        except ValueError as ve:
+            QMessageBox.warning(self, "Lỗi", str(ve))
         except Exception as e:
             QMessageBox.critical(self, "Lỗi", f"Lỗi khi thêm khách hàng: {str(e)}")
+
 
     def update_customer(self):
         """Update customer data in the database."""
@@ -77,6 +79,7 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
         phone = self.phone.text().strip()
         address = self.address.text().strip() 
         dateDK = self.dateDK.text().strip()
+
         try:
             dateDK = datetime.strptime(dateDK, "%d-%b-%y").strftime("%Y-%m-%d")
         except ValueError:
@@ -87,9 +90,15 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
             QMessageBox.warning(self, "Lỗi", "Vui lòng điền đầy đủ thông tin khách hàng!")
             return
 
-        self.KhachHangBUS.update_user(maKH, name, email, phone, address, dateDK) 
-        QMessageBox.information(self, "Thành công", "Thông tin khách hàng đã được cập nhật!")
-        self.load_data()
+        try:
+            self.KhachHangBUS.update_user(maKH, name, email, phone, address, dateDK)
+            QMessageBox.information(self, "Thành công", "Thông tin khách hàng đã được cập nhật!")
+            self.load_data()
+        except ValueError as ve:
+            QMessageBox.warning(self, "Lỗi", str(ve))
+        except Exception as e:
+            QMessageBox.critical(self, "Lỗi", f"Lỗi khi cập nhật khách hàng: {str(e)}")
+
 
     def delete_customer(self):
         """Delete a customer from the database."""
@@ -136,12 +145,6 @@ class QuanLyKhachHang(QMainWindow): #main window for customer management
         from GUI.QLHoaDon import QuanLyHoaDon
         self.employee_window = QuanLyHoaDon()
         self.employee_window.show()
-        self.close()
-
-    def openHome(self):
-        from GUI.AdminGUI import AdminGUI
-        self.home_window = AdminGUI()
-        self.home_window.show()
         self.close()
     
     def openDHN(self):

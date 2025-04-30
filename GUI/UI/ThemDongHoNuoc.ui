@@ -29,6 +29,9 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Thêm Đồng Hồ Nước</string>
     </property>
@@ -51,11 +54,48 @@
       <height>0</height>
      </size>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QTableWidget {
+    background-color: rgb(7, 28, 42);     /* cell background */
+    color: white;                  /* text color */
+    gridline-color: #dcdcdc;         /* grid line color */
+    font-size: 14px;
+}
+
+QTableWidget::item:selected {
+    background-color: #85c1e9;       /* selected row background */
+    color: white;                    /* selected text color */
+}
+QHeaderView::section {
+    background-color: rgb(25, 47, 63);
+    color: white;
+    font-weight: bold;
+}
+
+QScrollBar:horizontal {
+    background: rgb(0, 0, 0);
+    height: 10px;
+    margin: 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #3498db;
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background: none;
+    width: 0px;
+}
+</string>
+    </property>
     <attribute name="horizontalHeaderMinimumSectionSize">
      <number>32</number>
     </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>123</number>
+     <number>126</number>
     </attribute>
     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
      <bool>false</bool>
@@ -106,6 +146,13 @@
       <pointsize>10</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;
+</string>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -123,6 +170,9 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string>Email</string>
@@ -142,6 +192,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Tên khách hàng</string>
     </property>
@@ -159,6 +212,9 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string>Mã khách hàng</string>
@@ -178,6 +234,13 @@
       <pointsize>10</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;
+</string>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -195,6 +258,13 @@
      <font>
       <pointsize>10</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;
+</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -217,6 +287,13 @@
       <pointsize>10</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;
+</string>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -234,6 +311,9 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string>Số điện thoại</string>
@@ -253,6 +333,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Địa chỉ</string>
     </property>
@@ -270,6 +353,13 @@
      <font>
       <pointsize>10</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -293,6 +383,9 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Thông Tin Khách Hàng</string>
     </property>
@@ -315,6 +408,9 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Thêm Đồng Hồ Nước</string>
     </property>
@@ -335,6 +431,13 @@
      <font>
       <pointsize>10</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -357,6 +460,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Địa chỉ</string>
     </property>
@@ -375,6 +481,12 @@
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="text">
      <string>Xác Nhận</string>
@@ -395,12 +507,76 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
     <property name="text">
      <string>Hủy</string>
     </property>
    </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1031</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(18, 38, 52);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>70</y>
+       <width>361</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(20, 43, 59);
+ border: 2px solid rgb(1, 52, 88);      /* Blue outline */
+    border-radius: 15px;            /* Rounded corners */</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>label</zorder>
+   <zorder>tbDanhSachKhachHang</zorder>
+   <zorder>txtSoDienThoai</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>txtDiaChi</zorder>
+   <zorder>txtEmail</zorder>
+   <zorder>txtMaKH</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>txtTenKH</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>txtDiaDiem</zorder>
+   <zorder>label_9</zorder>
+   <zorder>btnXacNhan</zorder>
+   <zorder>btnHuy</zorder>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

@@ -12,7 +12,6 @@ class QuanLyDongHoNuoc(QMainWindow):
             self.dongHoNuocBus = DongHoNuocBUS()
             self.List.setSelectionBehavior(self.List.SelectionBehavior.SelectRows)
             self.List.setSelectionMode(self.List.SelectionMode.SingleSelection)
-            self.btnHome.clicked.connect(self.openHome)
             self.btnKH_2.clicked.connect(self.openKH)
             self.btnNV_2.clicked.connect(self.openNV)
             self.btnHD_2.clicked.connect(self.openHD)
@@ -118,12 +117,7 @@ class QuanLyDongHoNuoc(QMainWindow):
             self.customer_window = QuanLyKhachHang()
             self.customer_window.show()
             self.close()
-
-      def openHome(self):
-            from GUI.AdminGUI import AdminGUI
-            self.home_window = AdminGUI()
-            self.home_window.show()
-            self.close()
+            
       def openHD(self):
             from GUI.QLHoaDon import QuanLyHoaDon
             self.employee_window = QuanLyHoaDon()

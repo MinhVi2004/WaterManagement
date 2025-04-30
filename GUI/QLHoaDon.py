@@ -12,7 +12,6 @@ class QuanLyHoaDon(QMainWindow):
         self.List.setSelectionMode(self.List.SelectionMode.SingleSelection)     # Chỉ được chọn 1 hàng
         self.List.cellClicked.connect(self.show_selected_row_data)
         self.txtSearch.textChanged.connect(self.search_hoa_don)
-        self.btnHome.clicked.connect(self.openHome)
         self.btnKH_2.clicked.connect(self.openKH)
         self.btnNV_2.clicked.connect(self.openNV)
         self.btnDHN_2.clicked.connect(self.openDHN)
@@ -135,11 +134,6 @@ class QuanLyHoaDon(QMainWindow):
         self.customer_window.show()
         self.close()
 
-    def openHome(self):
-        from GUI.AdminGUI import AdminGUI
-        self.home_window = AdminGUI()
-        self.home_window.show()
-        self.close()
     def openDHN(self):
         from GUI.QLDongHoNuoc import QuanLyDongHoNuoc
         self.dongHoNuocWindow = QuanLyDongHoNuoc()

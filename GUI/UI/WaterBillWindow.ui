@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
+    <width>465</width>
     <height>637</height>
    </rect>
   </property>
@@ -27,6 +27,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>VNĐ</string>
    </property>
@@ -44,6 +47,9 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>Khối nước (m^3)</string>
@@ -63,6 +69,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Tổng tiền :</string>
    </property>
@@ -80,6 +89,9 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>Khách Hàng :</string>
@@ -99,6 +111,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Tổng tiêu thụ :</string>
    </property>
@@ -116,6 +131,9 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>Số điện thoại :</string>
@@ -135,6 +153,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Địa chỉ :</string>
    </property>
@@ -153,6 +174,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Số nước mới :</string>
    </property>
@@ -170,6 +194,9 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>Mã Đồng Hồ :</string>
@@ -190,6 +217,9 @@
      <bold>true</bold>
      <underline>true</underline>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>Hóa Đơn Tiền Nước</string>
@@ -212,6 +242,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Số nước cũ :</string>
    </property>
@@ -229,6 +262,9 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>Ngày lập  :</string>
@@ -248,6 +284,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>VNĐ</string>
    </property>
@@ -265,6 +304,9 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>Đơn giá :</string>
@@ -284,6 +326,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Nhân viên :</string>
    </property>
@@ -296,6 +341,12 @@
      <width>301</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -310,6 +361,12 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
@@ -322,6 +379,12 @@
      <width>301</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -336,6 +399,12 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
@@ -348,6 +417,12 @@
      <width>301</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -362,6 +437,12 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
@@ -374,6 +455,12 @@
      <width>161</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -388,6 +475,12 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
@@ -400,6 +493,12 @@
      <width>161</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -414,6 +513,12 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
@@ -427,10 +532,83 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-1</y>
+     <width>471</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(18, 38, 52);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>441</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(20, 43, 59);
+ border: 2px solid rgb(1, 52, 88);      /* Blue outline */
+    border-radius: 15px;            /* Rounded corners */</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_13</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label_15</zorder>
+  <zorder>label_5</zorder>
+  <zorder>lbKhachHang</zorder>
+  <zorder>lbDiaChi</zorder>
+  <zorder>lbSoDienThoai</zorder>
+  <zorder>lbMaDongHo</zorder>
+  <zorder>lbSoNuocCu</zorder>
+  <zorder>lbSoNuocMoi</zorder>
+  <zorder>lbTongTieuThu</zorder>
+  <zorder>lbDonGia</zorder>
+  <zorder>lbTongTien</zorder>
+  <zorder>lbNgayLap</zorder>
+  <zorder>lbNhanVien</zorder>
  </widget>
  <resources/>
  <connections/>

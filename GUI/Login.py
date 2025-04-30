@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from PyQt6.uic import loadUi
 from BUS.LoginBUS import LoginBUS
-from GUI.AdminGUI import AdminGUI
+from GUI.QLNV import QuanLyNhanVien 
 from GUI.ChonKhachHang import ChonKhachHang
 
 class Login_w(QMainWindow):
@@ -25,7 +25,7 @@ class Login_w(QMainWindow):
 
                 if role == 'ADMIN':
                     print("Chuyển tới giao diện Admin")
-                    self.openAdminForm()
+                    self.OpenManagerForm()
                     
                 if role == 'STAFF':
                     print("Chuyển tới giao diện Nhân viên")
@@ -40,7 +40,7 @@ class Login_w(QMainWindow):
         self.staff_form.show()
         self.close()
     
-    def openAdminForm(self):
-        self.admin_form = AdminGUI()
+    def OpenManagerForm(self):
+        self.admin_form = QuanLyNhanVien()
         self.admin_form.show()
         self.close()

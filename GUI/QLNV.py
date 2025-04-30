@@ -17,7 +17,6 @@ class QuanLyNhanVien(QMainWindow):
         self.btnDel.clicked.connect(self.delete_employee)
         self.btnReset.clicked.connect(self.reset_employee)
         self.searchbutton.clicked.connect(self.search_employee)
-        self.btnHome.clicked.connect(self.openHome)
         self.btnKH.clicked.connect(self.openKH)
         self.btnDHN.clicked.connect(self.openDHN)
         self.btnHD.clicked.connect(self.openHD)
@@ -155,12 +154,6 @@ class QuanLyNhanVien(QMainWindow):
             self.tableNV.setItem(row_index, 6, QTableWidgetItem(str(employee.created_at)))
             statusStr = "Hoạt Động" if employee.status == 1 else "Không hoạt động"  
             self.tableNV.setItem(row_index, 7, QTableWidgetItem(statusStr))
-
-    def openHome(self):
-        from GUI.AdminGUI import AdminGUI
-        self.home = AdminGUI()
-        self.home.show()
-        self.close()
 
     def openKH(self):
         from GUI.QLKH import QuanLyKhachHang

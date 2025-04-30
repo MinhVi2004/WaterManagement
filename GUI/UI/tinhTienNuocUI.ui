@@ -28,6 +28,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Số nước mới :</string>
     </property>
@@ -49,6 +52,12 @@
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
     <property name="text">
      <string>Xác Nhận</string>
     </property>
@@ -67,6 +76,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Tổng tiền :</string>
     </property>
@@ -84,7 +96,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>C:/Users/dvmv2/OneDrive/Pictures/Wallpaper/1.jpg</pixmap>
+     <pixmap>../../../../../../../dvmv2/OneDrive/Pictures/Wallpaper/1.jpg</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -100,6 +112,9 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string>Địa chỉ :</string>
@@ -118,6 +133,9 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string>Số điện thoại :</string>
@@ -140,6 +158,12 @@
     <property name="cursor">
      <cursorShape>OpenHandCursor</cursorShape>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
     <property name="text">
      <string>Trở Về</string>
     </property>
@@ -159,6 +183,9 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Tính Tiền Nước</string>
     </property>
@@ -174,6 +201,12 @@
       <width>201</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="text">
      <string>Chụp ảnh</string>
@@ -193,6 +226,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Họ tên :</string>
     </property>
@@ -210,6 +246,9 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string>Số nước cũ :</string>
@@ -229,6 +268,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Tổng tiêu thụ :</string>
     </property>
@@ -246,6 +288,9 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string>Mã KH :</string>
@@ -265,6 +310,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Email :</string>
     </property>
@@ -283,6 +331,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Mã Đồng Hồ :</string>
     </property>
@@ -295,6 +346,12 @@
       <width>201</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="text">
      <string>Chọn Ảnh</string>
@@ -309,6 +366,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -321,6 +384,12 @@
       <width>281</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -335,6 +404,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -347,6 +422,12 @@
       <width>281</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -361,6 +442,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -373,6 +460,12 @@
       <width>281</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -387,6 +480,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -400,6 +499,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="txtTongTieuThu">
     <property name="geometry">
@@ -409,6 +514,12 @@
       <width>151</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -422,6 +533,12 @@
       <width>151</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(7, 28, 42);
+border: 2px solid rgb(7, 144, 245);   /* Blue border */
+border-radius: 8px;
+color:white;</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -441,6 +558,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>Khối nước (m^3)</string>
     </property>
@@ -459,22 +579,104 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
     <property name="text">
      <string>VNĐ</string>
     </property>
    </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>1201</width>
+      <height>701</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(18, 38, 52);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>50</y>
+       <width>451</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(20, 43, 59);
+ border: 2px solid rgb(1, 52, 88);      /* Blue outline */
+    border-radius: 15px;            /* Rounded corners */</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>50</y>
+       <width>551</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(20, 43, 59);
+ border: 2px solid rgb(1, 52, 88);      /* Blue outline */
+    border-radius: 15px;            /* Rounded corners */</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>label_6</zorder>
+   <zorder>btnSubmit</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>btnClose</zorder>
+   <zorder>lbTittle</zorder>
+   <zorder>btnCapture</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_10</zorder>
+   <zorder>label_11</zorder>
+   <zorder>btnChoose</zorder>
+   <zorder>txtMaKH</zorder>
+   <zorder>txtHoTen</zorder>
+   <zorder>txtDiaChi</zorder>
+   <zorder>txtEmail</zorder>
+   <zorder>txtSoDienThoai</zorder>
+   <zorder>txtMaDongHoNuoc</zorder>
+   <zorder>txtSoNuocTruoc</zorder>
+   <zorder>txtSoNuocSau</zorder>
+   <zorder>txtTongTieuThu</zorder>
+   <zorder>txtTongTien</zorder>
+   <zorder>label</zorder>
+   <zorder>label_12</zorder>
+   <zorder>hinhAnhDaChon</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1200</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

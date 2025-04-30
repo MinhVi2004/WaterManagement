@@ -29,7 +29,7 @@ class KhachHangBUS:
             raise ValueError("Vui lòng điền đầy đủ thông tin khách hàng!")
         """Updates an existing customer."""
         if not re.match(r"[^@]+@[^@]+\.[^@]+", email): #[^@]+ means "one or more characters that are not @(john,nguyen,gmail,com)" && \. means a literal dot. && @ means a literal @
-            raise ValueError(f"email phải theo định dạng ___@__.___, định dạng được nhập vào: {email}")
+            raise ValueError(f"email phải theo định dạng ___@__.___\n nhưng định dạng được nhập vào là: {email}")
         self.DAO.update_user(id, name, email, phone, address, NgayDangKy)
 
     def delete_user(self, id):
