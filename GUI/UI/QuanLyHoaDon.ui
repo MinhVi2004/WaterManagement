@@ -289,6 +289,9 @@ QScrollBar::sub-line:horizontal {
      <property name="autoScroll">
       <bool>true</bool>
      </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>

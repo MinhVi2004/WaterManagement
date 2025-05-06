@@ -26,6 +26,7 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -90,6 +91,9 @@ QScrollBar::sub-line:horizontal {
     width: 0px;
 }
 </string>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
     </property>
     <attribute name="horizontalHeaderMinimumSectionSize">
      <number>32</number>
@@ -380,6 +384,7 @@ color:white;
     <property name="font">
      <font>
       <pointsize>16</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -405,6 +410,7 @@ color:white;
     <property name="font">
      <font>
       <pointsize>16</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -479,6 +485,7 @@ color:white;
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -504,6 +511,7 @@ color:white;</string>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>

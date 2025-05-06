@@ -3,6 +3,7 @@ from PyQt6.QtCore import Qt
 #? Load giao diện sử dụng uic
 from PyQt6 import uic
 from BUS.DongHoNuocBUS import DongHoNuocBUS
+from BUS.KhachHangBUS import KhachHangBUS
 from DTO.DongHoNuocDTO import DongHoNuocDTO
 from GUI.TinhTienNuoc import TinhTienNuoc
 from DTO.KhachHangDTO import KhachHangDTO 
@@ -11,7 +12,7 @@ class ChonKhachHang(QMainWindow):
         super().__init__()
         self.employee = user
         uic.loadUi("GUI/UI/chonKhachHangUI.ui", self)
-
+        self.customerBUS = KhachHangBUS()
         self.dongHoNuocBUS = DongHoNuocBUS()
         self.loadData()
         self.btnSubmit.clicked.connect(self.xacNhanKhachHang)
