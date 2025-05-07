@@ -18,17 +18,17 @@ from skimage.measure import label, regionprops
 # Đơn giản hóa: chỉ phần segmentation
 
 # Các đường dẫn
-CSV_PATH = 'H:/My Drive/WaterMeters/data.csv'
-IMAGES_FOLDER = 'H:/My Drive/WaterMeters/images'
-MASKS_FOLDER = 'H:/My Drive/WaterMeters/masks'
+# CSV_PATH = 'H:/My Drive/WaterMeters/data.csv'
+# IMAGES_FOLDER = 'H:/My Drive/WaterMeters/images'
+# MASKS_FOLDER = 'H:/My Drive/WaterMeters/masks'
 
 # IMAGE_PATH = 'H:/My Drive/WaterMeters/images/id_1_value_13_116.jpg'
 MODEL_PATH = 'H:/My Drive/WaterMeters/final_segmentation_model.h5'
 # Load DataFrame và in thông tin
-data = pd.read_csv(CSV_PATH)
-print(f'Total images: {len(os.listdir(IMAGES_FOLDER))}')
-print(f'Total masks: {len(os.listdir(MASKS_FOLDER))}')
-print(f'Dataset length: {len(data)}')
+# data = pd.read_csv(CSV_PATH)
+# print(f'Total images: {len(os.listdir(IMAGES_FOLDER))}')
+# print(f'Total masks: {len(os.listdir(MASKS_FOLDER))}')
+# print(f'Dataset length: {len(data)}')
 
 # Load segmentation model (không compile tự động)
 model = tf.keras.models.load_model(
